@@ -24,12 +24,12 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     Respond professionally, like a real CEO. You manage the Sultan Trading Division, R&D Labs, and Cybersecurity. 
     Keep your response concise, strategic, and use a mix of Hindi and English (Hinglish)."""
     
-    try:
+        try:
         response = model.generate_content(prompt)
         await update.message.reply_text(response.text)
     except Exception as e:
-        await update.message.reply_text("Boss, API connection mein koi issue hai. CTO ko check karne bolta hoon.")
-
+        await update.message.reply_text(f"CTO Error Report: {str(e)}")
+        
 if __name__ == '__main__':
     print("Initializing AI CEO Head Office...")
     app = Application.builder().token(TELEGRAM_TOKEN).build()
