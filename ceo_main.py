@@ -23,7 +23,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         # LLaMA-3 Model ka use karke reply generate karna
         chat_completion = client.chat.completions.create(
             messages=[{"role": "user", "content": prompt}],
-            model="llama3-8b-8192", 
+            model="llama-3.1-8b-instant", 
         )
         response = chat_completion.choices[0].message.content
         await update.message.reply_text(response)
