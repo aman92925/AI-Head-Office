@@ -9,7 +9,7 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 # CEO ka Dimaag (Gemini AI) On karna
 genai.configure(api_key=GEMINI_API_KEY)
-model = genai.GenerativeModel('gemini-1.5-flash')
+model = genai.GenerativeModel('gemini-pro')
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     welcome_msg = "Greetings Chairman! 👔 Main aapka AI CEO hoon. Head Office ke sabhi systems online hain. Boliye, aaj ka hamara pehla corporate target kya hai?"
